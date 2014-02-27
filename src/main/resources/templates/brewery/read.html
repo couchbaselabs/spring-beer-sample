@@ -1,0 +1,40 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>Brewery Info</title>
+</head>
+<body>
+    <h1 layout:fragment="header">Brewery Info</h1>
+    <div layout:fragment="content" class="container">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td th:text="${brewery.name}"></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td th:text="${brewery.city}"></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td th:text="${brewery.state}"></td>
+                </tr>
+                <tr>
+                    <td>Code</td>
+                    <td th:text="${brewery.code}"></td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td th:text="${brewery.country}"></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td th:text="${brewery.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

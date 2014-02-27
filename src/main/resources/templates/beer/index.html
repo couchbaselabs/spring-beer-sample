@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title>All Beers</title>
+</head>
+<body>
+<h1 layout:fragment="header">All Beers</h1>
+<div layout:fragment="content" class="container">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>ABV</td>
+            <td>Brewery</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${beers.empty}">
+            <td colspan="3">
+                No Beers
+            </td>
+        </tr>
+        <tr th:each="beer : ${beers}">
+            <td th:text="${beer.name}">1</td>
+            <td th:text="${beer.abv}">1</td>
+            <td><a th:href="@{/brewery/__${beer.brewery}__}">[Link]</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
